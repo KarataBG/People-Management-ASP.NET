@@ -1,0 +1,42 @@
+﻿@page
+@using WebApplication1.Models
+@model WebApplication1.Pages.People.IndexModel
+@{
+
+}
+
+<h1>List of People</h1>
+<a href="/People/AddPerson">New Person</a>
+<table>
+	<thead>
+		<tr>
+			<th>Id</th>
+			<th>Name</th>
+			<th>Description</th>
+			<th>Phone</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (Person person in Model.listPeople)
+		{
+			<tr>
+				<td>
+					@person.Id
+				</td>
+				<td>
+					@person.Name
+				</td>
+				<td>
+					@person.Description
+				</td>
+				<td>
+					@person.Phone
+				</td>
+				<td>
+					<a href="/People/EditPerson?id=@person.Id">Edit</a>
+					<a href="/People/DeletePerson?id=@person.Id">Delete</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>

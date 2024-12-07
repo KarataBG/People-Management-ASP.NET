@@ -1,0 +1,46 @@
+﻿@page
+@using WebApplication1.Models
+@model PeopleModel
+@{
+
+	<h1>Peoples page</h1>
+
+
+	<form method="post">
+		<input type="text" name="name"/>
+		<input type="text" name="description" />
+		<input type="tel" name="phone"/>
+
+		<button type="submit"> ADD</button>
+
+	</form>
+
+
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Description</th>
+				<th>Phone</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			@foreach(Person person in Model.listPeople)
+			{
+				<tr>
+					<td>
+						@person.Id
+					</td><td>
+						@person.Name
+					</td><td>
+						@person.Description
+					</td><td>
+						@person.Phone
+					</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+}

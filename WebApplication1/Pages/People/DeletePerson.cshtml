@@ -1,0 +1,30 @@
+﻿@page
+@using Microsoft.Data.SqlClient
+
+
+@{
+
+    String id = Request.Query["id"];
+
+    try
+    {
+        String connectionString = "Data Source=DESKTOP-1HAF0DF;Initial Catalog=mystore;Integrated Security=True;Trust Server Certificate=True";
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+            String sql = "Delete From clients Where id=@id";
+            using (SqlCommand command = new SqlCommand(sql, connection))
+            {
+                command.Parameters.AddWithValue("id", id);
+                command.ExecuteNonQuery();
+            }
+        }
+    }
+    catch (Exception)
+    {
+
+        throw;
+    }
+
+    Response.Redirect("/People/Index");
+}

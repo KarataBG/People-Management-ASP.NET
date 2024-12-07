@@ -1,0 +1,20 @@
+﻿@page
+@model WebApplication1.Pages.People.AddPersonModel
+@{
+}
+
+<h1>New Person</h1>
+
+<form method="post">
+	<label>Name</label>
+	<input type="text" name="name" />
+
+	<label>Description</label>
+	<input type="text" name="Description" />
+
+	<label>Phone</label>
+	<input type="text" name="Phone" />
+
+	<button type="submit">Submit</button>
+	<a href="/People" role="button">Cancel</a>
+</form>

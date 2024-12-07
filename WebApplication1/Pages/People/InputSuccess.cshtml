@@ -1,0 +1,15 @@
+﻿@page
+@model InputSuccessModel
+@{
+    <h1>Success</h1>
+	<form method="post">
+		<button type="submit"> Go back</button>
+	</form>
+
+    <script>
+        // Redirect after 5 seconds (5000 milliseconds)
+        setTimeout(function () {
+            window.location.href = '@Url.Page("/People")';
+        }, 5000);
+    </script>
+}
